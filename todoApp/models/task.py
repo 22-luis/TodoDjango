@@ -7,3 +7,6 @@ class Task(models.Model):
     description = models.TextField()
     status = models.CharField(choices=status_choices, default='pending')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
